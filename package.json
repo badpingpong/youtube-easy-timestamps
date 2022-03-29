@@ -9,7 +9,8 @@
   "scripts": {
     "build": "node utils/build.js",
     "start": "node utils/webserver.js",
-    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
+    "test": "jest"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.7",
@@ -19,17 +20,22 @@
     "framer-motion": "^6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hot-loader": "^4.13.0"
+    "react-hook-form": "^7.28.1",
+    "react-hot-loader": "^4.13.0",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.0",
+    "@babel/core": "^7.17.8",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@types/chrome": "^0.0.177",
+    "@types/jest": "^27.4.1",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.3",
     "babel-preset-react-app": "^10.0.1",
     "clean-webpack-plugin": "^4.0.0",
@@ -46,6 +52,7 @@
     "fs-extra": "^10.0.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
     "node-sass": "^6.0.1",
     "prettier": "^2.5.1",
     "sass-loader": "^12.4.0",

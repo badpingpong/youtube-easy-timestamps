@@ -1,34 +1,33 @@
 import { printLine } from './modules/print'
-
-console.log('Content script works!')
-console.log('Must reload extension for modifications to take effect.')
+import React from 'react'
+import ReactDOM from 'react-dom'
+// import { TimeStampForm } from './TimeStampForm'
+import App from './App'
 
 printLine("Using the 'printLine' function from the Print Module")
 
 const TIMESTAMP_FORM_ID = 'timestamp-form'
-const APPEND_TARGET_ID = 'player'
+const CONTAINER_ID = 'primary-inner'
+const TARGET_ID_OF_INSERT_BEFORE = 'div#info.style-scope.ytd-watch-flexy'
+
+const form = document.createElement('div')
+form.setAttribute('id', TIMESTAMP_FORM_ID)
 
 const showTimestampForm = () => {
-  const newElement = document.createElement('div')
-  newElement.innerHTML = 'フォーム'
-  newElement.setAttribute('id', TIMESTAMP_FORM_ID)
-  document.getElementById(APPEND_TARGET_ID).appendChild(newElement)
+  const container = document.getElementById(CONTAINER_ID)
+  const reference = document.querySelector(TARGET_ID_OF_INSERT_BEFORE)
+  container.insertBefore(form, reference)
+}
+const video = document.querySelector('video')
+video.onloadedmetadata = () => {
+  console.log('動画読み込まれた！', document.getElementById('primary-inner'))
+  setTimeout(() => showTimestampForm(), 500)
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  console.log(
-    sender.tab
-      ? 'from a content script:' + sender.tab.url
-      : 'from the extension'
-  )
   if (request.type === 'show-form') {
-    if (document.getElementById(TIMESTAMP_FORM_ID)) {
-      sendResponse({ farewell: 'no! already exists' })
-      console.log('a?')
-    } else {
-      showTimestampForm()
-      sendResponse({ farewell: 'ok' })
-      console.log('a!')
-    }
+    !document.querySelector(TIMESTAMP_FORM_ID) && showTimestampForm()
   }
 })
+
+ReactDOM.render(<App />, form)
