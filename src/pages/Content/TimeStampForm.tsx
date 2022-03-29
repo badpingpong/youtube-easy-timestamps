@@ -38,7 +38,14 @@ export const TimeStampForm = () => {
 
   return (
     <FormControl onSubmit={handleSubmit(submit)} onKeyPress={onKeyPressInInput}>
-      <Input id="title" {...register('label')} bg={'white'} />
+      <Input
+        id="title"
+        {...register('label')}
+        bg={'white'}
+        placeholder={
+          '見出しを入力してEnterで挿入(未入力でタイムスタンプだけを挿入)'
+        }
+      />
       <InputRightElement>
         <IconButton
           aria-label="Stamp"
