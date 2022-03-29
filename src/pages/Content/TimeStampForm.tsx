@@ -8,11 +8,14 @@ import {
 import { useForm } from 'react-hook-form'
 import { StampIcon } from './StampIcon'
 import { convertSecondsToHHMMSS } from './helpers/timeConverters'
+import { useContext } from 'react'
+import { TimestampContext } from './TimestampContext'
 
 interface FormInputs {
   label: string
 }
 export const TimeStampForm = () => {
+  const { text, setText } = useContext(TimestampContext)
   const { register, handleSubmit, watch, reset } = useForm<FormInputs>()
 
   const getCurrentTime = () => {
@@ -21,19 +24,17 @@ export const TimeStampForm = () => {
   }
 
   const submit = () => {
-    console.log(getCurrentTime(), watch('label'))
+    const textToAppend = `${getCurrentTime()} ${watch('label')}`
+    setText(`${text}\n${textToAppend}`)
     reset({ label: '' })
   }
 
-  const onKeyPressInInput = React.useCallback(
-    (e: React.KeyboardEvent<HTMLDivElement>) => {
-      if (e.key === 'Enter') {
-        // e.preventDefault()
-        handleSubmit(submit)()
-      }
-    },
-    [handleSubmit]
-  )
+  const onKeyPressInInput = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter') {
+      // e.preventDefault()
+      handleSubmit(submit)()
+    }
+  }
 
   return (
     <FormControl onSubmit={handleSubmit(submit)} onKeyPress={onKeyPressInInput}>
