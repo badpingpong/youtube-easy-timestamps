@@ -3,5 +3,6 @@
   "globals": {
     "chrome": "readonly"
   },
-  "semi": "never"
+  "semi": "never",
+  "no-trailing-spaces": ["error", {"skipBlankLines": true}]
 }
