@@ -8,8 +8,8 @@
 - First version is released!
 ## Features
 
-This is a Google Chrome Extension which enables you to create timestamps comments for Youtube.
-This is created for those who want your favorite youtubers/v-tubers to be more famous.
+- This is a Google Chrome Extension which enables you to create timestamps comments for Youtube.
+- This is created for those who want your favorite youtubers/v-tubers to be more famous.
 
 
 
