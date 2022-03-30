@@ -1,6 +1,5 @@
-import { Box, Button } from '@chakra-ui/react'
+import { Text, Button, Center, Heading, VStack } from '@chakra-ui/react'
 import React from 'react'
-import logo from '../../assets/img/logo.svg'
 
 const Popup = () => {
   const showForm = () => {
@@ -9,9 +8,18 @@ const Popup = () => {
     })
   }
   return (
-    <Box>
-      <Button onClick={showForm}>フォーム表示</Button>
-    </Box>
+    <VStack py={6} bg="tomato">
+      <Heading size="lg" mb={4}>
+        Easy Youtube Timestamps
+      </Heading>
+      <Center mb={6}>
+        <VStack>
+          <Button onClick={showForm}>フォーム表示</Button>
+          <Text>(うまく表示されない時に押してみてください)</Text>
+        </VStack>
+      </Center>
+      <Heading size="xs">Developed by badpingpong</Heading>
+    </VStack>
   )
 }
 
