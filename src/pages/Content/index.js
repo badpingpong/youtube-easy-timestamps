@@ -19,6 +19,15 @@ timestampButton.setAttribute('id', 'timestamp-button')
 timestampButton.setAttribute('class', 'ytp-button')
 timestampButton.onclick = emitControlBarStampClickEvent
 
+window.onload = () => {
+  setTimeout(() => {
+    // ChakraUIの影響かロゴが正しく表示されなかったのでサイズを変更して本来の表示に近づける
+    const youtubeLogo = document.querySelector('.style-scope.ytd-logo')
+    youtubeLogo.style.width = '120px'
+    youtubeLogo.style.height = '56px'
+  }, 1000)
+}
+
 const showTimestampForm = () => {
   const container = document.getElementById(CONTAINER_ID)
   const reference = document.querySelector(TARGET_ID_OF_INSERT_BEFORE)
