@@ -1,1 +1,8 @@
-
+#timestamp-button {
+  min-width: 36px;
+  width: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
