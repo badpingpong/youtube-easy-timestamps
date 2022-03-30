@@ -37,7 +37,7 @@ export const MenuBar: React.FC = () => {
   }
 
   return (
-    <HStack w="100%" h="40px" px={4} justify={'space-between'}>
+    <HStack w="100%" h="40px" justify={'space-between'}>
       <HStack>
         <Tooltip label="copy to clipboard" hasArrow fontSize="lg">
           <IconButton
