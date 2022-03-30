@@ -1,2 +1,2 @@
-export const menuBarStampClickEvent = new CustomEvent('onMenuBarStampClick')
-export const emitMenuBarStampClickEvent = () => window.dispatchEvent(menuBarStampClickEvent)
+export const ControlBarStampClickEvent = new CustomEvent('onControlBarStampClick')
+export const emitControlBarStampClickEvent = () => window.dispatchEvent(ControlBarStampClickEvent)

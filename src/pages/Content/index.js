@@ -2,8 +2,8 @@ import { printLine } from './modules/print'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { MenuBarTimestampButton } from './MenuBarTimestampButton'
-import { emitMenuBarStampClickEvent } from './helpers/customEvent'
+import { ControlBarTimestampButton } from './ControlBarTimestampButton'
+import { emitControlBarStampClickEvent } from './helpers/customEvent'
 
 printLine("Using the 'printLine' function from the Print Module")
 
@@ -17,7 +17,7 @@ form.setAttribute('id', TIMESTAMP_FORM_ID)
 const timestampButton = document.createElement('div')
 timestampButton.setAttribute('id', 'timestamp-button')
 timestampButton.setAttribute('class', 'ytp-button')
-timestampButton.onclick = emitMenuBarStampClickEvent
+timestampButton.onclick = emitControlBarStampClickEvent
 
 const showTimestampForm = () => {
   const container = document.getElementById(CONTAINER_ID)
@@ -45,4 +45,4 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 })
 
 ReactDOM.render(<App />, form)
-ReactDOM.render(<MenuBarTimestampButton />, timestampButton)
+ReactDOM.render(<ControlBarTimestampButton />, timestampButton)

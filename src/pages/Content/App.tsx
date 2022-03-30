@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ChakraProvider, VStack } from '@chakra-ui/react'
 import { TimestampForm } from './TimestampForm'
 import { TimestampProvider } from './TimestampContext'
 import { TimestampsTextArea } from './TimestampsTextArea'
+import { MenuBar } from './MenuBar'
 
 const App = () => {
   return (
@@ -10,7 +11,10 @@ const App = () => {
       <TimestampProvider>
         <VStack py={2} spacing={2}>
           <TimestampForm />
-          <TimestampsTextArea />
+          <VStack w="100%">
+            <TimestampsTextArea />
+            <MenuBar />
+          </VStack>
         </VStack>
       </TimestampProvider>
     </ChakraProvider>
