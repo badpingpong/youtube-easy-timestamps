@@ -42,14 +42,21 @@ export const MenuBar: React.FC = () => {
         <Tooltip label="copy to clipboard" hasArrow fontSize="lg">
           <IconButton
             aria-label="Copy to clipboard"
-            icon={<CopyIcon boxSize={10} />}
+            colorScheme="teal"
+            size="lg"
+            fontSize="20px"
+            icon={<CopyIcon />}
             onClick={copyToClipboard}
           />
         </Tooltip>
         <Tooltip label="clear text" hasArrow fontSize="lg">
           <IconButton
-            aria-label="clear text "
-            icon={<DeleteIcon boxSize={8} />}
+            aria-label="clear text"
+            colorScheme="red"
+            variant="outline"
+            size="lg"
+            fontSize="16px"
+            icon={<DeleteIcon />}
             onClick={clearTimestamps}
           />
         </Tooltip>
@@ -58,13 +65,15 @@ export const MenuBar: React.FC = () => {
         <UnavailableFeatureTooltip>
           <IconButton
             aria-label="Copy to clipboard"
-            icon={<EmailIcon boxSize={7} />}
+            fontSize="16px"
+            icon={<EmailIcon />}
             disabled
           />
         </UnavailableFeatureTooltip>
         <IconButton
           aria-label="Copy to clipboard"
-          icon={<QuestionOutlineIcon boxSize={6} />}
+          fontSize="16px"
+          icon={<QuestionOutlineIcon />}
           disabled
         />
       </HStack>

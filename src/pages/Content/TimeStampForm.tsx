@@ -1,5 +1,12 @@
 import React from 'react'
-import { Button, FormControl, HStack, Input } from '@chakra-ui/react'
+import {
+  Button,
+  FormControl,
+  HStack,
+  IconButton,
+  Input,
+  Tooltip,
+} from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { StampIcon } from './icons/StampIcon'
 import { convertSecondsToHHMMSS } from './helpers/timeConverters'
@@ -26,7 +33,7 @@ export const TimestampForm = () => {
 
   const submit = () => {
     const textToAppend = `${getCurrentTime()} ${watch('label')}`
-    setText(`${text}\n${textToAppend}`)
+    setText(text ? `${text}\n${textToAppend}` : `${textToAppend}`)
     reset({ label: '' })
     if (textareaRef.current)
       textareaRef.current.scrollTop = textareaRef.current.scrollHeight
@@ -57,9 +64,19 @@ export const TimestampForm = () => {
           }
           paddingInlineStart={4}
         />
-        <Button size="lg" aria-label="Stamp" onClick={onSubmit}>
+        <Tooltip label="Add timestamp" hasArrow fontSize="lg">
+          <IconButton
+            aria-label="Add timestamp"
+            colorScheme="teal"
+            size="lg"
+            fontSize="16px"
+            icon={<StampIcon />}
+            onClick={onSubmit}
+          />
+        </Tooltip>
+        {/* <Button size="lg" aria-label="Stamp" onClick={onSubmit}>
           <StampIcon />
-        </Button>
+        </Button> */}
       </HStack>
     </FormControl>
   )
