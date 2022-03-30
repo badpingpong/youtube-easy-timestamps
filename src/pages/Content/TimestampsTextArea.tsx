@@ -8,7 +8,7 @@ interface FormType {
   text: string
 }
 export const TimestampsTextArea: React.FC = () => {
-  const { watch, reset, register } = useForm<FormType>()
+  const { register } = useForm<FormType>()
   const { text, setText, textareaRef } = useContext(TimestampContext)
 
   const onChange = (e: any) => {

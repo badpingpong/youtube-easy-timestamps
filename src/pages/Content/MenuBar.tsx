@@ -16,14 +16,12 @@ interface Props {
   closeForms: () => void
 }
 export const MenuBar: React.FC<Props> = ({ closeForms }) => {
-  const { text, setText, loadText } = useContext(TimestampContext)
+  const { text, setText, clearText } = useContext(TimestampContext)
   const toast = useToast()
 
-  const clearTimestamps = async () => {
-    if (await confirm('入力内容をリセットします')) {
-      setText('')
-    }
-  }
+  const clearTimestamps = async () =>
+    (await confirm('入力内容をリセットします')) && clearText()
+
   const copyToClipboard = async () => {
     const textToCopy = `${text}\n\n${QUOTATION_INFO_TEXT}`
     navigator.clipboard
@@ -64,9 +62,9 @@ export const MenuBar: React.FC<Props> = ({ closeForms }) => {
             onClick={clearTimestamps}
           />
         </Tooltip>
-        <Tooltip label="clear text" hasArrow fontSize="lg">
+        <Tooltip label="hide Forms" hasArrow fontSize="lg">
           <IconButton
-            aria-label="clear text"
+            aria-label="Hide forms"
             size="lg"
             fontSize="16px"
             icon={<CloseIcon />}

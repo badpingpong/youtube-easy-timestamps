@@ -73,9 +73,6 @@ export const TimestampForm = () => {
             onClick={onSubmit}
           />
         </Tooltip>
-        {/* <Button size="lg" aria-label="Stamp" onClick={onSubmit}>
-          <StampIcon />
-        </Button> */}
       </HStack>
     </FormControl>
   )
