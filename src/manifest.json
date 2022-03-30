@@ -2,6 +2,7 @@
   "manifest_version": 3,
   "name": "easy-youtube-timestamps",
   "description": "A chrome extension to easily post youtube timestamps comments",
+  "permissions": ["storage", "tabs"],
   "options_page": "options.html",
   "background": { "service_worker": "background.bundle.js" },
   "action": {

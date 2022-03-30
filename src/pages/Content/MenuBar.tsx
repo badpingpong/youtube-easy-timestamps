@@ -1,6 +1,7 @@
 import { HStack, IconButton, Tooltip, useToast } from '@chakra-ui/react'
 import React from 'react'
 import {
+  CloseIcon,
   CopyIcon,
   DeleteIcon,
   EmailIcon,
@@ -11,8 +12,11 @@ import { TimestampContext } from './TimestampContext'
 import { QUOTATION_INFO_TEXT } from './constants/constants'
 import { UnavailableFeatureTooltip } from './UnavailableFeatureTooltip'
 
-export const MenuBar: React.FC = () => {
-  const { text, setText } = useContext(TimestampContext)
+interface Props {
+  closeForms: () => void
+}
+export const MenuBar: React.FC<Props> = ({ closeForms }) => {
+  const { text, setText, loadText } = useContext(TimestampContext)
   const toast = useToast()
 
   const clearTimestamps = async () => {
@@ -58,6 +62,15 @@ export const MenuBar: React.FC = () => {
             fontSize="16px"
             icon={<DeleteIcon />}
             onClick={clearTimestamps}
+          />
+        </Tooltip>
+        <Tooltip label="clear text" hasArrow fontSize="lg">
+          <IconButton
+            aria-label="clear text"
+            size="lg"
+            fontSize="16px"
+            icon={<CloseIcon />}
+            onClick={closeForms}
           />
         </Tooltip>
       </HStack>

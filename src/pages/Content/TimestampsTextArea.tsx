@@ -18,6 +18,7 @@ export const TimestampsTextArea: React.FC = () => {
 
   return (
     <Textarea
+      {...register('text')}
       ref={textareaRef}
       value={text}
       bg="white"
