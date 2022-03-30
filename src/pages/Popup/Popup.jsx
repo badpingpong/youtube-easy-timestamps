@@ -1,5 +1,6 @@
-import { Text, Button, Center, Heading, VStack } from '@chakra-ui/react'
+import { Text, Button, Center, Heading, VStack, Image } from '@chakra-ui/react'
 import React from 'react'
+import logo from '../../assets/img/logo.svg'
 
 const Popup = () => {
   const showForm = () => {
@@ -8,7 +9,8 @@ const Popup = () => {
     })
   }
   return (
-    <VStack py={6} bg="tomato">
+    <VStack py={6}>
+      <Image src={logo} boxSize="100px" alt="logo" />
       <Heading size="lg" mb={4}>
         Easy Youtube Timestamps
       </Heading>
