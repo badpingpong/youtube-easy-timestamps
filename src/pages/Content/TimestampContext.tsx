@@ -35,7 +35,6 @@ export const TimestampProvider: React.FC = ({ children }) => {
   })
 
   useEffect(() => {
-    console.log('URL変更！', currentUrl)
     setText('')
     loadText()
   }, [currentUrl])
@@ -43,25 +42,17 @@ export const TimestampProvider: React.FC = ({ children }) => {
   const loadText = () => {
     key &&
       chrome.storage.sync.get([key], (result) => {
-        console.log('Text loaded!: ', result)
-        console.log(result[key])
         setText(result[key])
       })
   }
 
   const clearText = () => {
     setText('')
-    key &&
-      chrome.storage.sync.set({ [key]: '' }, () => {
-        console.log('Cleared text')
-      })
+    key && chrome.storage.sync.set({ [key]: '' })
   }
 
   const saveText = (text: string) => {
-    key &&
-      chrome.storage.sync.set({ [key]: text }, () => {
-        console.log(`Saved text to ${key}\n`, text)
-      })
+    key && chrome.storage.sync.set({ [key]: text })
   }
 
   useEffect(() => {
