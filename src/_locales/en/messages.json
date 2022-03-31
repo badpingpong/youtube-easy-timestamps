@@ -19,5 +19,7 @@
   "ext_show_form_at_popup": { "message": "Show forms" },
   "ext_popup_hint": {
     "message": "Click this button when unavailable"
-  }
+  },
+  "ext_offset_tooltip": { "message": "Offset used when a timestamp is added." },
+  "ext_second": { "message": "s" }
 }

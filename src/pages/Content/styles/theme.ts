@@ -1,7 +1,12 @@
+import { useMediaQuery } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
+
+const isDarkModeOnYoutube = document.querySelector('html')?.getAttribute('dark')
+const mode = isDarkModeOnYoutube ? 'dark' : 'light'
 
 export const theme = createTheme({
   palette: {
+    mode,
     primary: {
       main: '#008080',
     },

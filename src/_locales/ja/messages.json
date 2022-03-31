@@ -19,5 +19,9 @@
   "ext_show_form_at_popup": { "message": "フォーム表示" },
   "ext_popup_hint": {
     "message": "フォームがうまく表示されない場合に押してみてください"
-  }
+  },
+  "ext_offset_tooltip": {
+    "message": "タイムスタンプ追加時に秒数を調整できます。"
+  },
+  "ext_second": { "message": "秒" }
 }

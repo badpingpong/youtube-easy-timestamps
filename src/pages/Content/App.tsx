@@ -6,6 +6,9 @@ import { MenuBar } from './MenuBar'
 import { Stack, ThemeProvider } from '@mui/material'
 import { theme } from './styles/theme'
 
+const isDarkMode = document.querySelector('html')?.getAttribute('dark')
+const mode = isDarkMode ? 'dark' : 'light'
+console.log('ダークモード', isDarkMode, mode)
 const App = () => {
   const [isVisible, setIsVisible] = useState(true)
   const showForms = () => setIsVisible(true)

@@ -1,6 +1,6 @@
 {
   "name": "easy-youtube-timestamps",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A chrome extension to easily post a youtube timestamps comment",
   "license": "MIT",
   "repository": {
@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "node utils/build.js",
+    "postbuild": "cp -r src/_locales build/",
     "start": "node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "test": "jest"
