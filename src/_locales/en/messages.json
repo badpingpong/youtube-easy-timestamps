@@ -1,12 +1,22 @@
 {
-  "ext_name": {"message": "Easy Youtube Timestamps"},
-  "ext_desc": {"message": "This extension enables to easily post youtube timestamps comments! Lets's accelerate popularity of your favorite Youtubers/Vtubers"},
-  "ext_copy_tooltip": {"message": "Copy to clipboard"},
-  "ext_clear_textarea_tooltip": {"message": "Clear all text"},
-  "ext_hide_forms_tooltip": {"message": "Hide forms"},
-  "ext_contact_tooltip": {"message":"Contact me"},
-  "ext_question_tooltip": {"message": "How to use?"},
-  "ext_label_placeholder": {"message": "Enter to add a timestamp with a label"},
-  "ext_unavailable_feature_tooltip":{"message": "Sorry for inconvenience... This feature is unavailable now."},
-  "ext_add_timestamp_tooltip":{"message": "Add a timestamp with a label"}
+  "ext_name": { "message": "Easy Youtube Timestamps" },
+  "ext_desc": {
+    "message": "This extension enables to easily post youtube timestamps comments! Lets's accelerate popularity of your favorite Youtubers/Vtubers"
+  },
+  "ext_copy_tooltip": { "message": "Copy to clipboard" },
+  "ext_clear_textarea_tooltip": { "message": "Clear all text" },
+  "ext_hide_forms_tooltip": { "message": "Hide forms" },
+  "ext_contact_tooltip": { "message": "Contact me" },
+  "ext_question_tooltip": { "message": "How to use?" },
+  "ext_label_placeholder": {
+    "message": "Enter to add a timestamp with a label"
+  },
+  "ext_unavailable_feature_tooltip": {
+    "message": "Sorry for inconvenience... This feature is unavailable now."
+  },
+  "ext_add_timestamp_tooltip": { "message": "Add a timestamp with a label" },
+  "ext_show_form_at_popup": { "message": "Show forms" },
+  "ext_popup_hint": {
+    "message": "Click this button when unavailable"
+  }
 }

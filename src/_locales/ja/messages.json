@@ -1,12 +1,22 @@
 {
-  "ext_name": {"message": "Easy Youtube Timestamps"},
-  "ext_desc": {"message": "Youtubeの動画や配信でタイムスタンプコメントを簡単に管理できるようにする拡張機能です。推し活や切り抜きの補助にお使いください！"},
-  "ext_copy_tooltip": {"message": "クリップボードにコピー"},
-  "ext_clear_textarea_tooltip": {"message": "テキストを消去"},
-  "ext_hide_forms_tooltip": {"message": "フォームを非表示"},
-  "ext_contact_tooltip": {"message":"お問い合わせ"},
-  "ext_question_tooltip": {"message": "使い方"},
-  "ext_label_placeholder": {"message": "見出しを入力してEnterで挿入(未入力でもタイプスタンプのみの挿入が可能です)"},
-  "ext_unavailable_feature_tooltip":{"message": "ごめんなさい,実装中です..."},
-  "ext_add_timestamp_tooltip":{"message": "タイムスタンプをテキストに追加"}
+  "ext_name": { "message": "Easy Youtube Timestamps" },
+  "ext_desc": {
+    "message": "Youtubeの動画や配信でタイムスタンプコメントを簡単に管理できるようにする拡張機能です。推し活や切り抜きの補助にお使いください！"
+  },
+  "ext_copy_tooltip": { "message": "クリップボードにコピー" },
+  "ext_clear_textarea_tooltip": { "message": "テキストを消去" },
+  "ext_hide_forms_tooltip": { "message": "フォームを非表示" },
+  "ext_contact_tooltip": { "message": "お問い合わせ" },
+  "ext_question_tooltip": { "message": "使い方" },
+  "ext_label_placeholder": {
+    "message": "見出しを入力してEnterで挿入(未入力でもタイプスタンプのみの挿入が可能です)"
+  },
+  "ext_unavailable_feature_tooltip": {
+    "message": "ごめんなさい,実装中です..."
+  },
+  "ext_add_timestamp_tooltip": { "message": "タイムスタンプをテキストに追加" },
+  "ext_show_form_at_popup": { "message": "フォーム表示" },
+  "ext_popup_hint": {
+    "message": "フォームがうまく表示されない場合に押してみてください"
+  }
 }
