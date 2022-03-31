@@ -19,7 +19,7 @@ const Popup = () => {
     })
   }
   return (
-    <VStack pt={3} spacing={5} bg="tomato" h="100vh">
+    <VStack pt={3} spacing={5} h="100vh">
       <VStack>
         <Image src={logo} boxSize="60px" alt="logo" />
         <Heading size="lg" mb={4}>

@@ -16,7 +16,7 @@ export const TimestampsTextArea: React.FC = () => {
     setText(newText)
   }
 
-  return (
+  return text ? (
     <TextareaAutosize
       {...register('text')}
       ref={textareaRef}
@@ -24,5 +24,7 @@ export const TimestampsTextArea: React.FC = () => {
       value={text}
       onChange={onChange}
     />
+  ) : (
+    <></>
   )
 }
