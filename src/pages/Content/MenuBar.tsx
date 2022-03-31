@@ -15,6 +15,13 @@ import { UnavailableFeatureTooltip } from './UnavailableFeatureTooltip'
 interface Props {
   closeForms: () => void
 }
+
+const copyTooltipText = chrome.i18n.getMessage('ext_copy_tooltip')
+const clearTextareaTooltipText = chrome.i18n.getMessage(
+  'ext_clear_textarea_tooltip'
+)
+const hideFormsTooltipText = chrome.i18n.getMessage('ext_hide_forms_tooltip')
+console.log(hideFormsTooltipText)
 export const MenuBar: React.FC<Props> = ({ closeForms }) => {
   const { text, setText, clearText } = useContext(TimestampContext)
   const toast = useToast()
@@ -41,7 +48,7 @@ export const MenuBar: React.FC<Props> = ({ closeForms }) => {
   return (
     <HStack w="100%" h="40px" justify={'space-between'}>
       <HStack>
-        <Tooltip label="copy to clipboard" hasArrow fontSize="lg">
+        <Tooltip label={copyTooltipText} hasArrow fontSize="lg">
           <IconButton
             aria-label="Copy to clipboard"
             colorScheme="teal"
@@ -51,7 +58,7 @@ export const MenuBar: React.FC<Props> = ({ closeForms }) => {
             onClick={copyToClipboard}
           />
         </Tooltip>
-        <Tooltip label="clear text" hasArrow fontSize="lg">
+        <Tooltip label={clearTextareaTooltipText} hasArrow fontSize="lg">
           <IconButton
             aria-label="clear text"
             colorScheme="red"
@@ -62,7 +69,7 @@ export const MenuBar: React.FC<Props> = ({ closeForms }) => {
             onClick={clearTimestamps}
           />
         </Tooltip>
-        <Tooltip label="hide Forms" hasArrow fontSize="lg">
+        <Tooltip label={hideFormsTooltipText} hasArrow fontSize="lg">
           <IconButton
             aria-label="Hide forms"
             size="lg"
@@ -75,18 +82,20 @@ export const MenuBar: React.FC<Props> = ({ closeForms }) => {
       <HStack>
         <UnavailableFeatureTooltip>
           <IconButton
-            aria-label="Copy to clipboard"
+            aria-label="Contact me"
             fontSize="16px"
             icon={<EmailIcon />}
             disabled
           />
         </UnavailableFeatureTooltip>
-        <IconButton
-          aria-label="Copy to clipboard"
-          fontSize="16px"
-          icon={<QuestionOutlineIcon />}
-          disabled
-        />
+        <UnavailableFeatureTooltip>
+          <IconButton
+            aria-label="how to use"
+            fontSize="16px"
+            icon={<QuestionOutlineIcon />}
+            disabled
+          />
+        </UnavailableFeatureTooltip>
       </HStack>
     </HStack>
   )
