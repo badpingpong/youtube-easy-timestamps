@@ -1,16 +1,14 @@
-import { HStack, IconButton, Tooltip, useToast } from '@chakra-ui/react'
 import React from 'react'
-import {
-  CloseIcon,
-  CopyIcon,
-  DeleteIcon,
-  EmailIcon,
-  QuestionOutlineIcon,
-} from '@chakra-ui/icons'
+import EmailIcon from '@mui/icons-material/Email'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import ContentPasteIcon from '@mui/icons-material/ContentPaste'
+import VisibilityIcon from '@mui/icons-material/Visibility'
 import { useContext } from 'react'
 import { TimestampContext } from './TimestampContext'
 import { QUOTATION_INFO_TEXT } from './constants/constants'
 import { UnavailableFeatureTooltip } from './UnavailableFeatureTooltip'
+import { IconButton, Stack, Tooltip } from '@mui/material'
 
 interface Props {
   closeForms: () => void
@@ -21,82 +19,53 @@ const clearTextareaTooltipText = chrome.i18n.getMessage(
   'ext_clear_textarea_tooltip'
 )
 const hideFormsTooltipText = chrome.i18n.getMessage('ext_hide_forms_tooltip')
-console.log(hideFormsTooltipText)
+
 export const MenuBar: React.FC<Props> = ({ closeForms }) => {
   const { text, setText, clearText } = useContext(TimestampContext)
-  const toast = useToast()
-
   const clearTimestamps = async () =>
     (await confirm('入力内容をリセットします')) && clearText()
 
   const copyToClipboard = async () => {
     const textToCopy = `${text}\n\n${QUOTATION_INFO_TEXT}`
-    navigator.clipboard
-      .writeText(textToCopy)
-      .then(() => {
-        toast({
-          title: 'Copied!',
-          status: 'success',
-          isClosable: true,
-        })
-      })
-      .catch(() => {
-        toast({ title: 'Copy failed...', status: 'error', isClosable: true })
-      })
+    navigator.clipboard.writeText(textToCopy)
   }
 
   return (
-    <HStack w="100%" h="40px" justify={'space-between'}>
-      <HStack>
-        <Tooltip label={copyTooltipText} hasArrow fontSize="lg">
-          <IconButton
-            aria-label="Copy to clipboard"
-            colorScheme="teal"
-            size="lg"
-            fontSize="20px"
-            icon={<CopyIcon />}
-            onClick={copyToClipboard}
-          />
+    <Stack
+      direction="row"
+      width="100%"
+      height="40px"
+      justifyContent="space-between"
+    >
+      <Stack direction="row">
+        <Tooltip title={copyTooltipText}>
+          <IconButton onClick={copyToClipboard} color="primary">
+            <ContentPasteIcon sx={{ fontSize: '24px' }} />
+          </IconButton>
         </Tooltip>
-        <Tooltip label={clearTextareaTooltipText} hasArrow fontSize="lg">
-          <IconButton
-            aria-label="clear text"
-            colorScheme="red"
-            variant="outline"
-            size="lg"
-            fontSize="16px"
-            icon={<DeleteIcon />}
-            onClick={clearTimestamps}
-          />
+        <Tooltip title={clearTextareaTooltipText}>
+          <IconButton onClick={clearTimestamps} color="error">
+            <DeleteForeverIcon sx={{ fontSize: '24px' }} />
+          </IconButton>
         </Tooltip>
-        <Tooltip label={hideFormsTooltipText} hasArrow fontSize="lg">
-          <IconButton
-            aria-label="Hide forms"
-            size="lg"
-            fontSize="16px"
-            icon={<CloseIcon />}
-            onClick={closeForms}
-          />
+        <Tooltip title={hideFormsTooltipText}>
+          <IconButton onClick={closeForms} color="info">
+            <VisibilityIcon sx={{ fontSize: '24px' }} />
+          </IconButton>
         </Tooltip>
-      </HStack>
-      <HStack>
+      </Stack>
+      <Stack direction="row">
         <UnavailableFeatureTooltip>
-          <IconButton
-            aria-label="Contact me"
-            fontSize="16px"
-            icon={<EmailIcon />}
-            disabled
-          />
+          <IconButton disabled>
+            <EmailIcon sx={{ fontSize: '24px' }} />
+          </IconButton>
         </UnavailableFeatureTooltip>
         <UnavailableFeatureTooltip>
-          <IconButton
-            aria-label="how to use"
-            fontSize="16px"
-            icon={<QuestionOutlineIcon />}
-            disabled
-          />
+          <IconButton disabled>
+            <HelpOutlineIcon sx={{ fontSize: '24px' }} />
+          </IconButton>
         </UnavailableFeatureTooltip>
-      </HStack>
-    </HStack>
+      </Stack>
+    </Stack>
   )
 }

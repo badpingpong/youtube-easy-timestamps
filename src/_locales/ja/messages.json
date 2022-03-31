@@ -7,5 +7,6 @@
   "ext_contact_tooltip": {"message":"お問い合わせ"},
   "ext_question_tooltip": {"message": "使い方"},
   "ext_label_placeholder": {"message": "見出しを入力してEnterで挿入(未入力でもタイプスタンプのみの挿入が可能です)"},
-  "ext_unavailable_feature_tooltip":{"message": "ごめんなさい,実装中です..."}
+  "ext_unavailable_feature_tooltip":{"message": "ごめんなさい,実装中です..."},
+  "ext_add_timestamp_tooltip":{"message": "タイムスタンプをテキストに追加"}
 }

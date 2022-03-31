@@ -1,4 +1,4 @@
-import { Textarea } from '@chakra-ui/react'
+import { TextareaAutosize } from '@mui/material'
 import React from 'react'
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
@@ -17,12 +17,12 @@ export const TimestampsTextArea: React.FC = () => {
   }
 
   return (
-    <Textarea
+    <TextareaAutosize
       {...register('text')}
       ref={textareaRef}
+      maxRows={6}
       value={text}
-      bg="white"
       onChange={onChange}
-    ></Textarea>
+    />
   )
 }

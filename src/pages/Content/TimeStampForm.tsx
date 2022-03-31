@@ -1,21 +1,20 @@
 import React from 'react'
-import {
-  FormControl,
-  HStack,
-  IconButton,
-  Input,
-  Tooltip,
-} from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { StampIcon } from './icons/StampIcon'
 import { convertSecondsToHHMMSS } from './helpers/timeConverters'
 import { useContext } from 'react'
 import { TimestampContext } from './TimestampContext'
 import { useEffect } from 'react'
+import { FormGroup, IconButton, Input, Stack, Tooltip } from '@mui/material'
 
 interface FormInputs {
   label: string
 }
+const addTimestampTooltipText = chrome.i18n.getMessage(
+  'ext_add_timestamp_tooltip'
+)
+const labelPlaceholderText = chrome.i18n.getMessage('ext_label_placeholder')
+
 export const TimestampForm = () => {
   const { text, setText, textareaRef } = useContext(TimestampContext)
   const { register, handleSubmit, watch, reset } = useForm<FormInputs>()
@@ -50,30 +49,21 @@ export const TimestampForm = () => {
   }
 
   return (
-    <FormControl onSubmit={onSubmit} onKeyPress={onKeyPressInInput}>
-      <HStack spacing={2}>
+    <FormGroup onSubmit={onSubmit} onKeyPress={onKeyPressInInput}>
+      <Stack direction="row" spacing={2}>
         <Input
           id="title"
-          size="lg"
           {...register('label')}
-          bg={'white'}
-          variant="flushed"
-          placeholder={
-            '見出しを入力してEnterで挿入(未入力でタイムスタンプだけを挿入)'
-          }
-          paddingInlineStart={4}
+          value={watch('label')}
+          fullWidth
+          placeholder={labelPlaceholderText}
         />
-        <Tooltip label="Add timestamp" hasArrow fontSize="lg">
-          <IconButton
-            aria-label="Add timestamp"
-            colorScheme="teal"
-            size="lg"
-            fontSize="16px"
-            icon={<StampIcon />}
-            onClick={onSubmit}
-          />
+        <Tooltip title={addTimestampTooltipText}>
+          <IconButton color="primary">
+            <StampIcon />
+          </IconButton>
         </Tooltip>
-      </HStack>
-    </FormControl>
+      </Stack>
+    </FormGroup>
   )
 }

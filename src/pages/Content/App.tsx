@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { ChakraProvider, VStack } from '@chakra-ui/react'
 import { TimestampForm } from './TimestampForm'
 import { TimestampProvider } from './TimestampContext'
 import { TimestampsTextArea } from './TimestampsTextArea'
 import { MenuBar } from './MenuBar'
+import { Stack, ThemeProvider } from '@mui/material'
+import { theme } from './styles/theme'
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(true)
@@ -16,19 +17,27 @@ const App = () => {
   }, [])
 
   return (
-    <ChakraProvider>
+    <ThemeProvider theme={theme}>
       <TimestampProvider>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
         {isVisible && (
-          <VStack py={2} spacing={2}>
+          <Stack spacing={1}>
             <TimestampForm />
-            <VStack w="100%">
+            <Stack spacing={1}>
               <TimestampsTextArea />
               <MenuBar closeForms={hideForms} />
-            </VStack>
-          </VStack>
+            </Stack>
+          </Stack>
         )}
       </TimestampProvider>
-    </ChakraProvider>
+    </ThemeProvider>
   )
 }
 

@@ -6,6 +6,7 @@
   "ext_hide_forms_tooltip": {"message": "Hide forms"},
   "ext_contact_tooltip": {"message":"Contact me"},
   "ext_question_tooltip": {"message": "How to use?"},
-  "ext_label_placeholder": {"message": "Enter to add timestamp"},
-  "ext_unavailable_feature_tooltip":{"message": "Sorry for inconvenience... This feature is unavailable now"}
+  "ext_label_placeholder": {"message": "Enter to add a timestamp with a label"},
+  "ext_unavailable_feature_tooltip":{"message": "Sorry for inconvenience... This feature is unavailable now."},
+  "ext_add_timestamp_tooltip":{"message": "Add a timestamp with a label"}
 }
