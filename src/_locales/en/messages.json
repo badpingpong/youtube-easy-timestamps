@@ -3,6 +3,7 @@
   "ext_desc": {
     "message": "This extension enables to easily post youtube timestamps comments! Lets's accelerate popularity of your favorite Youtubers/Vtubers"
   },
+  "ext_control_bar_timestamp_icon_tooltip": { "message": "Add a timestamp" },
   "ext_copy_tooltip": { "message": "Copy to clipboard" },
   "ext_clear_textarea_tooltip": { "message": "Clear all text" },
   "ext_hide_forms_tooltip": { "message": "Hide forms" },

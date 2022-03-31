@@ -3,6 +3,7 @@
   "ext_desc": {
     "message": "Youtubeの動画や配信でタイムスタンプコメントを簡単に管理できるようにする拡張機能です。推し活や切り抜きの補助にお使いください！"
   },
+  "ext_control_bar_timestamp_icon_tooltip": { "message": "タイムスタンプ追加" },
   "ext_copy_tooltip": { "message": "クリップボードにコピー" },
   "ext_clear_textarea_tooltip": { "message": "テキストを消去" },
   "ext_hide_forms_tooltip": { "message": "フォームを非表示" },

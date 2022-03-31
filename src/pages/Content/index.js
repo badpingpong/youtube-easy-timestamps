@@ -14,9 +14,11 @@ const TARGET_ID_OF_INSERT_AFTER = 'div#player.style-scope.ytd-watch-flexy'
 const form = document.createElement('div')
 form.setAttribute('id', TIMESTAMP_FORM_ID)
 
-const timestampButton = document.createElement('div')
+const timestampButton = document.createElement('button')
 timestampButton.setAttribute('id', 'timestamp-button')
 timestampButton.setAttribute('class', 'ytp-button')
+timestampButton.setAttribute('title', 'EZ-timestamps')
+timestampButton.setAttribute('aria-label', 'Add a timestamp')
 timestampButton.onclick = emitControlBarStampClickEvent
 
 // window.onload = () => {
